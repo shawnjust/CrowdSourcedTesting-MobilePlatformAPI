@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="CrowdSourcedTesting-MobilePlatformAPI"
+  id="myeclipse.1402543922453"
+  context-root="/CrowdSourcedTesting-MobilePlatformAPI"
+  j2ee-spec="6.0"
+  archive="CrowdSourcedTesting-MobilePlatformAPI.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
