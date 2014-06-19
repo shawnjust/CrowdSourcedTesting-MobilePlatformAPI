@@ -1,10 +1,7 @@
 package cn.com.crowdtest.ws.generated;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -22,11 +19,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="bugReports" type="{http://www.w3.org/2001/XMLSchema}anyType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="changeGifts" type="{http://www.w3.org/2001/XMLSchema}anyType" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="hasAuthority" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
- *         &lt;element name="joinQuestionnaires" type="{http://www.w3.org/2001/XMLSchema}anyType" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="taskComments" type="{http://www.w3.org/2001/XMLSchema}anyType" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="testerBirthday" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="testerCredit" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
  *         &lt;element name="testerEmail" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
@@ -45,21 +38,12 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "tester", propOrder = { "bugReports", "changeGifts",
-		"hasAuthority", "joinQuestionnaires", "taskComments", "testerBirthday",
+@XmlType(name = "tester", propOrder = { "hasAuthority", "testerBirthday",
 		"testerCredit", "testerEmail", "testerGender", "testerId",
 		"testerMobile", "testerName", "testerPassword", "testerPhoto" })
 public class Tester {
 
-	@XmlElement(nillable = true)
-	protected List<Object> bugReports;
-	@XmlElement(nillable = true)
-	protected List<Object> changeGifts;
 	protected Boolean hasAuthority;
-	@XmlElement(nillable = true)
-	protected List<Object> joinQuestionnaires;
-	@XmlElement(nillable = true)
-	protected List<Object> taskComments;
 	@XmlSchemaType(name = "dateTime")
 	protected XMLGregorianCalendar testerBirthday;
 	protected Double testerCredit;
@@ -70,64 +54,6 @@ public class Tester {
 	protected String testerName;
 	protected String testerPassword;
 	protected String testerPhoto;
-
-	/**
-	 * Gets the value of the bugReports property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the bugReports property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getBugReports().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Object }
-	 * 
-	 * 
-	 */
-	public List<Object> getBugReports() {
-		if (bugReports == null) {
-			bugReports = new ArrayList<Object>();
-		}
-		return this.bugReports;
-	}
-
-	/**
-	 * Gets the value of the changeGifts property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the changeGifts property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getChangeGifts().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Object }
-	 * 
-	 * 
-	 */
-	public List<Object> getChangeGifts() {
-		if (changeGifts == null) {
-			changeGifts = new ArrayList<Object>();
-		}
-		return this.changeGifts;
-	}
 
 	/**
 	 * Gets the value of the hasAuthority property.
@@ -148,64 +74,6 @@ public class Tester {
 	 */
 	public void setHasAuthority(Boolean value) {
 		this.hasAuthority = value;
-	}
-
-	/**
-	 * Gets the value of the joinQuestionnaires property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the joinQuestionnaires property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getJoinQuestionnaires().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Object }
-	 * 
-	 * 
-	 */
-	public List<Object> getJoinQuestionnaires() {
-		if (joinQuestionnaires == null) {
-			joinQuestionnaires = new ArrayList<Object>();
-		}
-		return this.joinQuestionnaires;
-	}
-
-	/**
-	 * Gets the value of the taskComments property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the taskComments property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getTaskComments().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Object }
-	 * 
-	 * 
-	 */
-	public List<Object> getTaskComments() {
-		if (taskComments == null) {
-			taskComments = new ArrayList<Object>();
-		}
-		return this.taskComments;
 	}
 
 	/**

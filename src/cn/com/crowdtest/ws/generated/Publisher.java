@@ -17,7 +17,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="administrator" type="{http://datawebservices.crowdsourcedtesting.com.cn/}administrator" minOccurs="0"/>
  *         &lt;element name="businessLicense" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="isPassed" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *         &lt;element name="publisherAuthority" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
@@ -39,14 +38,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "publisher", propOrder = { "administrator", "businessLicense",
-		"isPassed", "publisherAuthority", "publisherCompany",
-		"publisherConnectEmail", "publisherCredit", "publisherId",
-		"publisherLogEmail", "publisherName", "publisherPassword",
-		"publisherPhoto", "publisherType" })
+@XmlType(name = "publisher", propOrder = { "businessLicense", "isPassed",
+		"publisherAuthority", "publisherCompany", "publisherConnectEmail",
+		"publisherCredit", "publisherId", "publisherLogEmail", "publisherName",
+		"publisherPassword", "publisherPhoto", "publisherType" })
 public class Publisher {
 
-	protected Administrator administrator;
 	protected String businessLicense;
 	protected Boolean isPassed;
 	protected Boolean publisherAuthority;
@@ -59,27 +56,6 @@ public class Publisher {
 	protected String publisherPassword;
 	protected String publisherPhoto;
 	protected Boolean publisherType;
-
-	/**
-	 * Gets the value of the administrator property.
-	 * 
-	 * @return possible object is {@link Administrator }
-	 * 
-	 */
-	public Administrator getAdministrator() {
-		return administrator;
-	}
-
-	/**
-	 * Sets the value of the administrator property.
-	 * 
-	 * @param value
-	 *            allowed object is {@link Administrator }
-	 * 
-	 */
-	public void setAdministrator(Administrator value) {
-		this.administrator = value;
-	}
 
 	/**
 	 * Gets the value of the businessLicense property.

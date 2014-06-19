@@ -1,10 +1,7 @@
 package cn.com.crowdtest.ws.generated;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -27,7 +24,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *         &lt;element name="perReward" type="{http://www.w3.org/2001/XMLSchema}double" minOccurs="0"/>
  *         &lt;element name="product" type="{http://datawebservices.crowdsourcedtesting.com.cn/}product" minOccurs="0"/>
  *         &lt;element name="publisher" type="{http://datawebservices.crowdsourcedtesting.com.cn/}publisher" minOccurs="0"/>
- *         &lt;element name="taskComments" type="{http://www.w3.org/2001/XMLSchema}anyType" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="taskEndTime" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="taskEnvironment" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="taskId" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
@@ -44,8 +40,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "testTask", propOrder = { "administrator", "isPassed",
-		"perReward", "product", "publisher", "taskComments", "taskEndTime",
-		"taskEnvironment", "taskId", "taskStartTime", "taskType", "wholeCredit" })
+		"perReward", "product", "publisher", "taskEndTime", "taskEnvironment",
+		"taskId", "taskStartTime", "taskType", "wholeCredit" })
 public class TestTask {
 
 	protected Administrator administrator;
@@ -53,8 +49,6 @@ public class TestTask {
 	protected Double perReward;
 	protected Product product;
 	protected Publisher publisher;
-	@XmlElement(nillable = true)
-	protected List<Object> taskComments;
 	@XmlSchemaType(name = "dateTime")
 	protected XMLGregorianCalendar taskEndTime;
 	protected String taskEnvironment;
@@ -167,35 +161,6 @@ public class TestTask {
 	 */
 	public void setPublisher(Publisher value) {
 		this.publisher = value;
-	}
-
-	/**
-	 * Gets the value of the taskComments property.
-	 * 
-	 * <p>
-	 * This accessor method returns a reference to the live list, not a
-	 * snapshot. Therefore any modification you make to the returned list will
-	 * be present inside the JAXB object. This is why there is not a
-	 * <CODE>set</CODE> method for the taskComments property.
-	 * 
-	 * <p>
-	 * For example, to add a new item, do as follows:
-	 * 
-	 * <pre>
-	 * getTaskComments().add(newItem);
-	 * </pre>
-	 * 
-	 * 
-	 * <p>
-	 * Objects of the following type(s) are allowed in the list {@link Object }
-	 * 
-	 * 
-	 */
-	public List<Object> getTaskComments() {
-		if (taskComments == null) {
-			taskComments = new ArrayList<Object>();
-		}
-		return this.taskComments;
 	}
 
 	/**

@@ -2,7 +2,6 @@ package cn.com.crowdtest.ws.generated;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
@@ -32,7 +31,6 @@ import javax.xml.datatype.XMLGregorianCalendar;
  * 
  * 
  */
-@XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "joinTask", propOrder = { "joinDate", "joinTaskId", "testTask",
 		"tester" })

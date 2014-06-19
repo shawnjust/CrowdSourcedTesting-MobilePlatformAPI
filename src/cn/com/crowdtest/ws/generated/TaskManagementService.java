@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceClient;
  * <pre>
  * TaskManagementService service = new TaskManagementService();
  * TaskManagementDelegate portType = service.getTaskManagementPort();
- * portType.addWebProduct(...);
+ * portType.findcheckedWebByPage(...);
  * </pre>
  * 
  * </p>

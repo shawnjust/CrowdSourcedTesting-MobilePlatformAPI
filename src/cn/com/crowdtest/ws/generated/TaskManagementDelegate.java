@@ -19,51 +19,37 @@ public interface TaskManagementDelegate {
 
 	/**
 	 * 
-	 * @param icon
-	 * @param description
-	 * @param webLink
-	 * @param productName
-	 * @return returns cn.com.crowdtest.ws.generated.Product
+	 * @param page
+	 * @return returns cn.com.crowdtest.ws.generated.TestTaskArray
 	 */
 	@WebMethod
 	@WebResult(partName = "return")
-	public Product addWebProduct(
-			@WebParam(name = "productName", partName = "productName") String productName,
-			@WebParam(name = "icon", partName = "icon") String icon,
-			@WebParam(name = "webLink", partName = "webLink") String webLink,
-			@WebParam(name = "description", partName = "description") String description);
+	public TestTaskArray findcheckedWebByPage(
+			@WebParam(name = "page", partName = "page") Page page);
 
 	/**
 	 * 
-	 * @param icon
-	 * @param appLocation
-	 * @param description
-	 * @param productName
-	 * @return returns cn.com.crowdtest.ws.generated.Product
+	 * @param testerId
+	 * @param testTaskId
+	 * @return returns cn.com.crowdtest.ws.generated.JoinTask
 	 */
 	@WebMethod
 	@WebResult(partName = "return")
-	public Product addAndroidProduct(
-			@WebParam(name = "productName", partName = "productName") String productName,
-			@WebParam(name = "icon", partName = "icon") String icon,
-			@WebParam(name = "appLocation", partName = "appLocation") String appLocation,
-			@WebParam(name = "description", partName = "description") String description);
+	public JoinTask addJoinTask(
+			@WebParam(name = "testerId", partName = "testerId") int testerId,
+			@WebParam(name = "testTaskId", partName = "testTaskId") int testTaskId);
 
 	/**
 	 * 
-	 * @param icon
-	 * @param description
-	 * @param desktopAddress
-	 * @param productName
-	 * @return returns cn.com.crowdtest.ws.generated.Product
+	 * @param testerId
+	 * @param testTaskId
+	 * @return returns boolean
 	 */
 	@WebMethod
 	@WebResult(partName = "return")
-	public Product addDesktopProduct(
-			@WebParam(name = "productName", partName = "productName") String productName,
-			@WebParam(name = "icon", partName = "icon") String icon,
-			@WebParam(name = "desktopAddress", partName = "desktopAddress") String desktopAddress,
-			@WebParam(name = "description", partName = "description") String description);
+	public boolean isTesterJoinTask(
+			@WebParam(name = "testerId", partName = "testerId") int testerId,
+			@WebParam(name = "testTaskId", partName = "testTaskId") int testTaskId);
 
 	/**
 	 * 
@@ -155,6 +141,54 @@ public interface TaskManagementDelegate {
 
 	/**
 	 * 
+	 * @param icon
+	 * @param description
+	 * @param webLink
+	 * @param productName
+	 * @return returns cn.com.crowdtest.ws.generated.Product
+	 */
+	@WebMethod
+	@WebResult(partName = "return")
+	public Product addWebProduct(
+			@WebParam(name = "productName", partName = "productName") String productName,
+			@WebParam(name = "icon", partName = "icon") String icon,
+			@WebParam(name = "webLink", partName = "webLink") String webLink,
+			@WebParam(name = "description", partName = "description") String description);
+
+	/**
+	 * 
+	 * @param icon
+	 * @param appLocation
+	 * @param description
+	 * @param productName
+	 * @return returns cn.com.crowdtest.ws.generated.Product
+	 */
+	@WebMethod
+	@WebResult(partName = "return")
+	public Product addAndroidProduct(
+			@WebParam(name = "productName", partName = "productName") String productName,
+			@WebParam(name = "icon", partName = "icon") String icon,
+			@WebParam(name = "appLocation", partName = "appLocation") String appLocation,
+			@WebParam(name = "description", partName = "description") String description);
+
+	/**
+	 * 
+	 * @param icon
+	 * @param description
+	 * @param desktopAddress
+	 * @param productName
+	 * @return returns cn.com.crowdtest.ws.generated.Product
+	 */
+	@WebMethod
+	@WebResult(partName = "return")
+	public Product addDesktopProduct(
+			@WebParam(name = "productName", partName = "productName") String productName,
+			@WebParam(name = "icon", partName = "icon") String icon,
+			@WebParam(name = "desktopAddress", partName = "desktopAddress") String desktopAddress,
+			@WebParam(name = "description", partName = "description") String description);
+
+	/**
+	 * 
 	 * @param publisher
 	 * @return returns int
 	 */
@@ -170,39 +204,5 @@ public interface TaskManagementDelegate {
 	@WebMethod
 	@WebResult(partName = "return")
 	public int getcheckedWebTotalRows();
-
-	/**
-	 * 
-	 * @param testerId
-	 * @param testTaskId
-	 * @return returns boolean
-	 */
-	@WebMethod
-	@WebResult(partName = "return")
-	public boolean isTesterJoinTask(
-			@WebParam(name = "testerId", partName = "testerId") int testerId,
-			@WebParam(name = "testTaskId", partName = "testTaskId") int testTaskId);
-
-	/**
-	 * 
-	 * @param testerId
-	 * @param testTaskId
-	 * @return returns cn.com.crowdtest.ws.generated.JoinTask
-	 */
-	@WebMethod
-	@WebResult(partName = "return")
-	public JoinTask addJoinTask(
-			@WebParam(name = "testerId", partName = "testerId") int testerId,
-			@WebParam(name = "testTaskId", partName = "testTaskId") int testTaskId);
-
-	/**
-	 * 
-	 * @param page
-	 * @return returns cn.com.crowdtest.ws.generated.TestTaskArray
-	 */
-	@WebMethod
-	@WebResult(partName = "return")
-	public TestTaskArray findcheckedWebByPage(
-			@WebParam(name = "page", partName = "page") Page page);
 
 }

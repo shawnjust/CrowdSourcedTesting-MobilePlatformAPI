@@ -25,19 +25,27 @@ public class ObjectFactory {
 	}
 
 	/**
-	 * Create an instance of {@link Page }
+	 * Create an instance of {@link BugReportArray }
 	 * 
 	 */
-	public Page createPage() {
-		return new Page();
+	public BugReportArray createBugReportArray() {
+		return new BugReportArray();
 	}
 
 	/**
-	 * Create an instance of {@link PublisherArray }
+	 * Create an instance of {@link Product }
 	 * 
 	 */
-	public PublisherArray createPublisherArray() {
-		return new PublisherArray();
+	public Product createProduct() {
+		return new Product();
+	}
+
+	/**
+	 * Create an instance of {@link Subcategory }
+	 * 
+	 */
+	public Subcategory createSubcategory() {
+		return new Subcategory();
 	}
 
 	/**
@@ -49,11 +57,19 @@ public class ObjectFactory {
 	}
 
 	/**
-	 * Create an instance of {@link Publisher }
+	 * Create an instance of {@link Category }
 	 * 
 	 */
-	public Publisher createPublisher() {
-		return new Publisher();
+	public Category createCategory() {
+		return new Category();
+	}
+
+	/**
+	 * Create an instance of {@link BugReport }
+	 * 
+	 */
+	public BugReport createBugReport() {
+		return new BugReport();
 	}
 
 	/**
@@ -62,6 +78,22 @@ public class ObjectFactory {
 	 */
 	public Administrator createAdministrator() {
 		return new Administrator();
+	}
+
+	/**
+	 * Create an instance of {@link Publisher }
+	 * 
+	 */
+	public Publisher createPublisher() {
+		return new Publisher();
+	}
+
+	/**
+	 * Create an instance of {@link TestTask }
+	 * 
+	 */
+	public TestTask createTestTask() {
+		return new TestTask();
 	}
 
 }

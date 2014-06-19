@@ -1,7 +1,10 @@
 package cn.com.crowdtest.ws.generated;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 /**
@@ -23,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="administratorName" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="administratorOccupation" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="administratorPassword" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="testTasks" type="{http://www.w3.org/2001/XMLSchema}anyType" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -34,7 +38,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "administrator", propOrder = { "administratorAuthority",
 		"administratorEmail", "administratorId", "administratorName",
-		"administratorOccupation", "administratorPassword" })
+		"administratorOccupation", "administratorPassword", "testTasks" })
 public class Administrator {
 
 	protected Boolean administratorAuthority;
@@ -43,6 +47,8 @@ public class Administrator {
 	protected String administratorName;
 	protected String administratorOccupation;
 	protected String administratorPassword;
+	@XmlElement(nillable = true)
+	protected List<Object> testTasks;
 
 	/**
 	 * Gets the value of the administratorAuthority property.
@@ -168,6 +174,35 @@ public class Administrator {
 	 */
 	public void setAdministratorPassword(String value) {
 		this.administratorPassword = value;
+	}
+
+	/**
+	 * Gets the value of the testTasks property.
+	 * 
+	 * <p>
+	 * This accessor method returns a reference to the live list, not a
+	 * snapshot. Therefore any modification you make to the returned list will
+	 * be present inside the JAXB object. This is why there is not a
+	 * <CODE>set</CODE> method for the testTasks property.
+	 * 
+	 * <p>
+	 * For example, to add a new item, do as follows:
+	 * 
+	 * <pre>
+	 * getTestTasks().add(newItem);
+	 * </pre>
+	 * 
+	 * 
+	 * <p>
+	 * Objects of the following type(s) are allowed in the list {@link Object }
+	 * 
+	 * 
+	 */
+	public List<Object> getTestTasks() {
+		if (testTasks == null) {
+			testTasks = new ArrayList<Object>();
+		}
+		return this.testTasks;
 	}
 
 }

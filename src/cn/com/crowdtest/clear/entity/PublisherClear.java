@@ -7,13 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 import cn.com.crowdtest.ws.generated.Publisher;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "publisher", propOrder = { "administrator", "businessLicense",
+@XmlType(name = "publisher", propOrder = { "businessLicense",
 		"isPassed", "publisherAuthority", "publisherCompany",
 		"publisherConnectEmail", "publisherCredit", "publisherId",
 		"publisherLogEmail", "publisherName", "publisherPhoto", "publisherType" })
 public class PublisherClear {
 
-	protected AdministratorClear administrator;
 	protected String businessLicense;
 	protected Boolean isPassed;
 	protected Boolean publisherAuthority;
@@ -31,7 +30,6 @@ public class PublisherClear {
 	}
 
 	public PublisherClear(Publisher publisher) {
-		administrator = new AdministratorClear(publisher.getAdministrator());
 		businessLicense = publisher.getBusinessLicense();
 		isPassed = publisher.isIsPassed();
 		publisherAuthority = publisher.isPublisherAuthority();
@@ -43,14 +41,6 @@ public class PublisherClear {
 		publisherName = publisher.getPublisherName();
 		publisherPhoto = publisher.getPublisherPhoto();
 		publisherType = publisher.isPublisherType();
-	}
-
-	public AdministratorClear getAdministrator() {
-		return administrator;
-	}
-
-	public void setAdministrator(AdministratorClear administrator) {
-		this.administrator = administrator;
 	}
 
 	public String getBusinessLicense() {

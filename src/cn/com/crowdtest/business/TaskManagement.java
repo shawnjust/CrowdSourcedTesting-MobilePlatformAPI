@@ -1,4 +1,4 @@
-package cn.com.crowdtest.process;
+package cn.com.crowdtest.business;
 
 import java.util.Date;
 import java.util.List;
@@ -18,17 +18,37 @@ public class TaskManagement {
 
 	public Product addWebProduct(String productName, String icon,
 			String webLink, String description) {
+		if (productName == null || icon == null || webLink == null
+				|| description == null) {
+			return null;
+		}
 		return delegate.addWebProduct(productName, icon, webLink, description);
+	}
+
+	public JoinTask addJoinTask(int testerId, int testTaskId) {
+		if (!isTesterJoinTask(testerId, testTaskId)) {
+			return delegate.addJoinTask(testerId, testTaskId);
+		} else {
+			return null;
+		}
 	}
 
 	public Product addAndroidProduct(String productName, String icon,
 			String appLocation, String description) {
+		if (productName == null || icon == null || appLocation == null
+				|| description == null) {
+			return null;
+		}
 		return delegate.addAndroidProduct(productName, icon, appLocation,
 				description);
 	}
 
 	public Product addDesktopProduct(String productName, String icon,
 			String desktopAddress, String description) {
+		if (productName == null || icon == null || desktopAddress == null
+				|| description == null) {
+			return null;
+		}
 		return delegate.addDesktopProduct(productName, icon, desktopAddress,
 				description);
 	}
@@ -36,12 +56,18 @@ public class TaskManagement {
 	public TestTask addTestTask(Product product, int productType,
 			Publisher publisher, Date beginTime, Date endTime,
 			double perReward, double wholeCredit) {
+		if (product == null || publisher == null || beginTime == null) {
+			return null;
+		}
 		return delegate.addTestTask(product, productType, publisher, beginTime,
 				endTime, perReward, wholeCredit);
 
 	}
 
 	public List<TestTask> findUncheckedWebByPage(Page page) {
+		if (page == null) {
+			return null;
+		}
 		return delegate.findUncheckedWebByPage(page).getItem();
 	}
 
@@ -50,6 +76,9 @@ public class TaskManagement {
 	}
 
 	public List<TestTask> findUncheckedAndroidByPage(Page page) {
+		if (page == null) {
+			return null;
+		}
 		return delegate.findUncheckedAndroidByPage(page).getItem();
 	}
 
@@ -58,6 +87,9 @@ public class TaskManagement {
 	}
 
 	public List<TestTask> findUncheckedDesktopByPage(Page page) {
+		if (page == null) {
+			return null;
+		}
 		return delegate.findUncheckedDesktopByPage(page).getItem();
 	}
 
@@ -67,15 +99,24 @@ public class TaskManagement {
 
 	public List<TestTask> findPublisherWebTestTaskByPage(Page page,
 			Publisher publisher) {
+		if (page == null || publisher == null) {
+			return null;
+		}
 		return delegate.findPublisherWebTestTaskByPage(page, publisher)
 				.getItem();
 	}
 
 	public int getPublisherWebTotalRows(Publisher publisher) {
+		if (publisher == null) {
+			return -1;
+		}
 		return delegate.getPublisherWebTotalRows(publisher);
 	}
 
 	public List<TestTask> findcheckedWebByPage(Page page) {
+		if (page == null) {
+			return null;
+		}
 		return delegate.findcheckedWebByPage(page).getItem();
 	}
 
@@ -87,7 +128,4 @@ public class TaskManagement {
 		return delegate.isTesterJoinTask(testerId, testTaskId);
 	}
 
-	public JoinTask addJoinTask(int testerId, int testTaskId) {
-		return delegate.addJoinTask(testerId, testTaskId);
-	}
 }
